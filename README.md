@@ -1,7 +1,7 @@
 # aframe-bytebeat
 
 Bytebeat live coding A-Frame component, for the Metabeat metaverse live coding system.
-
+Based on the Stackbeat JavaScript implementation: [Stackbeat](https://esolangs.org/wiki/StackBeat)
 
 # Dependencies
 
