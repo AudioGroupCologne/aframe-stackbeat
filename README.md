@@ -1,4 +1,4 @@
-# aframe-bytebeat
+# aframe-stackbeat
 
 StackBeat live coding A-Frame component, for the Stackverse metaverse live coding system.
 Based on the Stackbeat JavaScript implementation: [StackBeat](https://esolangs.org/wiki/StackBeat)
@@ -9,3 +9,7 @@ Use this component in [A-Frame](https://aframe.io), together with the [Networked
 
 ## Run
 See the Metabeat metaverse system for implementation: [Stackverse](https://github.com/AudioGroupCologne/Stackverse) 
+
+## Acknowledgements
+
+The A-Frame StackBeat component is based on the StackBeat JavaScript implementation found at [esolangs](https://esolangs.org/wiki/StackBeat) 
