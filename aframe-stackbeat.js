@@ -6,7 +6,8 @@ class stackbeatSynth {
     this.lastCode = this.code;
     this.bytebeatWorker = false;
   }
-
+  
+// Based on StackBeat JavaScript implementation found at esolangs: https://esolangs.org/wiki/StackBeat
   parse(code) {
     let w = code.split("");
     let r = "";
