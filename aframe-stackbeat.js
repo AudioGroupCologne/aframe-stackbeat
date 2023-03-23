@@ -162,7 +162,7 @@ AFRAME.registerComponent("stack-keyboard", {
 });
 
 /* global AFRAME, NAF */
-AFRAME.registerComponent('stackverse-persistent', {
+AFRAME.registerComponent('stackbeat-persistent', {
   schema: {
     template: { default: '' },
     keyCode: { default: 32 }
