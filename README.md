@@ -26,13 +26,75 @@ Use this component in [A-Frame](https://aframe.io), together with the [Networked
     </a-scene>
 ```
 
-StackBeat Live Coding objects can also be spawned into the environment. See Glitch example for implementation.
-
 ###### Attributes:
 
 | Property | Description | Default |
 | ------------- | ------------- | ------------- |
 | code | current source code  | _ |
+
+### Add template of the live-coding object, including an Aframe-Super-Keyboard component, to your A-Scene assets:
+
+```html
+    <a-assets>
+        <template id="stackbeat-template">
+          <a-entity
+            class="raycastable"
+            geometry="primitive: box"
+            material="wireframe:true"
+            text="value:Hello World;side:double"
+            resonance-audio-src="
+            src:;
+            loop: true;
+            autoplay: true;"
+            stackbeat=""
+          >
+            <a-entity
+              id="keyboard"
+              super-keyboard="hand:; imagePath:./aframe-stackbeat/;multipleInputs:true"
+              stack-keyboard
+              position="0 -0.6 +0.6"
+              rotation="-30 0 0"
+            ></a-entity>
+          </a-entity>
+        </template>
+```
+
+### Add template the Networked-Aframe NAF.shemas: 
+
+
+```javascript
+        if (!NAF.schemas.hasTemplate("#stackbeat-template")) {
+          NAF.schemas.add({
+            template: "#stackbeat-template",
+            components: [
+              "position",
+              {
+                component: "stackbeat",
+                property: "code",
+              },
+            ],
+          });
+        }
+```
+
+### Live coding objects can be spawned into the environment by using the `stackbeat-persistent` component: 
+
+```html
+      <!-- Player Setting -->
+      <a-entity
+        id="rig"
+        networked="template:#rig-template;"
+        movement-controls
+        stackbeat-persistent="template:#stackbeat-template; keyCode:32"
+      >
+```
+
+###### Attributes:
+
+| Property | Description | Default |
+| ------------- | ------------- | ------------- |
+| template | template of the object to be spawned  | '' |
+| keyCode | key code to trigger spawned object  | 32 (space) |
 
 
 ## Run
